@@ -1,0 +1,64 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B3166-4A1D-410D-81B9-515A35A57472}|EcommerceOLAP\\EcommerceOLAP.dwproj|C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Ecommerce.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{3C4B3166-4A1D-410D-81B9-515A35A57472}|EcommerceOLAP\\EcommerceOLAP.dwproj|solutionrelative:EcommerceOLAP\\Ecommerce.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B3166-4A1D-410D-81B9-515A35A57472}|EcommerceOLAP\\EcommerceOLAP.dwproj|C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{3C4B3166-4A1D-410D-81B9-515A35A57472}|EcommerceOLAP\\EcommerceOLAP.dwproj|solutionrelative:EcommerceOLAP\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ecommerce.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Ecommerce.cube",
+              "RelativeDocumentMoniker": "EcommerceOLAP\\Ecommerce.cube",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Ecommerce.cube [Design]",
+              "RelativeToolTip": "EcommerceOLAP\\Ecommerce.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-20T08:21:30.668Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Time.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Dim Time.dim",
+              "RelativeDocumentMoniker": "EcommerceOLAP\\Dim Time.dim",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\SQL Server Management Studio\\Project\\EcommerceOLAP\\EcommerceOLAP\\Dim Time.dim [Design]",
+              "RelativeToolTip": "EcommerceOLAP\\Dim Time.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-20T08:21:20.542Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

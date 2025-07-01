@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.EcommerceDW.sa"
+  DTS:DTSID="{3AE119BA-90FB-4EBC-9AD6-CE77E230CE7D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=EcommerceDW;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Ecommerce-ETL-{3AE119BA-90FB-4EBC-9AD6-CE77E230CE7D}LocalHost.EcommerceDW.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFrjZITM5pUWBgv3YQREo8QAAAAACAAAAAAAQZgAAAAEAACAAAADkG0dN2yXPIH1AVxOWhPtF0kRlGLAaWpRIhC6TQCNZoAAAAAAOgAAAAAIAACAAAABGMfFAsoUt9/lJhTzJLOKrew94AqZHAJZa1mu59DDs54AAAADhu/IKXVvZ8AQvmEWI/YQ9dczW9bAAhsbWduUEVzRR+QmETOYhvON/zkfyBSZYt0We/BNqChMxtOUMjDit8aVrIGldK0xrDS8GTJIMyrasW5CiNSb1N40+Yk4XAK+E5t7u2ll/wxSLIjwkyEkQ1vBcJUonxbORDumVIkyUP1t8T0AAAAAHHsPc8Cb6YuogxPcnxLqVc1nhDRDtl8vJYRdeBZLcvo/mf4zgdA/YRM28+vQWlGK64jRLunzaMLMe5xTEGNJs</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

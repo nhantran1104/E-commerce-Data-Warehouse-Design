@@ -1,0 +1,1511 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2025 7:36:59 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NGUYENVANTHANG"
+  DTS:CreatorName="NGUYENVANTHANG\NGUYENVANTHANG"
+  DTS:DTSID="{6700C410-023F-4D8C-9818-AF001D42156A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageSales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{9A9823E3-774F-437E-A45B-0450FE36F244}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Products"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E4644183-C765-4A83-840F-CF82927AE93D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Products"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgEcommerceProduct"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgEcommerceProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Connections[OleDbConnection]"
+                  connectionManagerID="{8CC181AA-4CC2-4F61-B798-6D535A766610}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.EcommerceStageDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].Columns[product_category_name_english]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="product_category_name_english"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].ExternalColumns[product_category_name_english]"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_category_name_english]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input].ExternalColumns[product_category_name_english]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_category_name_english" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Products\SRC - Ecommerce Product"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Ecommerce Product"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[products]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT dbo.products.product_id, dbo.product_category_name_translation.product_category_name_english
+FROM     dbo.product_category_name_translation, dbo.products
+WHERE  dbo.product_category_name_translation.product_category_name = dbo.products.product_category_name</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Products\SRC - Ecommerce Product.Connections[OleDbConnection]"
+                  connectionManagerID="{33169FD1-6E7F-473E-B509-271FD1FFB1A9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Ecommerce.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_category_name_english]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].ExternalColumns[product_category_name_english]"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_category_name_english]"
+                      name="product_category_name_english"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].ExternalColumns[product_category_name_english]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_category_name_english" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[product_category_name_english]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[product_category_name_english]"
+                      name="product_category_name_english" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Products.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Products\DST - Stage stgEcommerceProduct.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Products\SRC - Ecommerce Product.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Sales"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DBA81D4A-A969-4E0A-B49C-806416DA4268}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Sales"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgEcommerceSales"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgEcommerceSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Connections[OleDbConnection]"
+                  connectionManagerID="{8CC181AA-4CC2-4F61-B798-6D535A766610}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.EcommerceStageDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[order_item_id]"
+                      cachedDataType="ui1"
+                      cachedName="order_item_id"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_item_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_item_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[price]"
+                      cachedDataType="r8"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[price]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[freight_value]"
+                      cachedDataType="r8"
+                      cachedName="freight_value"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[freight_value]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[freight_value]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[order_purchase_timestamp]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="order_purchase_timestamp"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[order_delivered_customer_date]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="order_delivered_customer_date"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[order_estimated_delivery_date]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="order_estimated_delivery_date"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[seller_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_id"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[seller_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_item_id]"
+                      dataType="ui1"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      dataType="r8"
+                      name="price" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[freight_value]"
+                      dataType="r8"
+                      name="freight_value" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp2"
+                      name="order_purchase_timestamp"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp2"
+                      name="order_delivered_customer_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp2"
+                      name="order_estimated_delivery_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Ecommerce OrderItems"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[order_items]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT dbo.order_items.order_id, dbo.order_items.order_item_id, dbo.order_items.product_id, dbo.order_items.price, dbo.order_items.freight_value, dbo.orders.order_purchase_timestamp, dbo.orders.order_delivered_customer_date, 
+                  dbo.orders.order_estimated_delivery_date, dbo.order_items.seller_id, dbo.orders.customer_id
+FROM     dbo.order_items, dbo.orders
+WHERE  dbo.order_items.order_id = dbo.orders.order_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Connections[OleDbConnection]"
+                  connectionManagerID="{33169FD1-6E7F-473E-B509-271FD1FFB1A9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Ecommerce.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_item_id]"
+                      name="order_item_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[freight_value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[freight_value]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[freight_value]"
+                      name="freight_value"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      name="seller_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_item_id]"
+                      dataType="ui1"
+                      name="order_item_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      dataType="r8"
+                      name="price" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[freight_value]"
+                      dataType="r8"
+                      name="freight_value" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp2"
+                      name="order_purchase_timestamp"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp2"
+                      name="order_delivered_customer_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp2"
+                      name="order_estimated_delivery_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      dataType="ui1"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_item_id]"
+                      name="order_item_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[price]"
+                      dataType="r8"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[price]"
+                      name="price" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[freight_value]"
+                      dataType="r8"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[freight_value]"
+                      name="freight_value" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      name="seller_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Sales.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Sales\DST - Stage stgEcommerceSales.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Sales\SRC - Ecommerce OrderItems.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Sellers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B66A8091-A0B3-4F44-A3C3-E1BFEB00EDD0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Sellers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgEcommerceSeller"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgEcommerceSeller]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Connections[OleDbConnection]"
+                  connectionManagerID="{8CC181AA-4CC2-4F61-B798-6D535A766610}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.EcommerceStageDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].Columns[seller_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_id"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].Columns[seller_city]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_city"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_city]"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_city]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].Columns[seller_state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_state"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_state]"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_state]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_city]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input].ExternalColumns[seller_state]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_state" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Ecommerce Seller"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sellers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Connections[OleDbConnection]"
+                  connectionManagerID="{33169FD1-6E7F-473E-B509-271FD1FFB1A9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Ecommerce.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      name="seller_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_city]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_city]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_city]"
+                      name="seller_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_state]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_state]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].Columns[seller_state]"
+                      name="seller_state"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_city]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output].ExternalColumns[seller_state]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_state" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      name="seller_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_city]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_city]"
+                      name="seller_city" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[seller_state]"
+                      name="seller_state" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Sellers.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Sellers\SRC - Ecommerce Seller.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate Stage Sale"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A925319D-0038-46CA-BC52-8833EFD49F05}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate Stage Sale"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CC181AA-4CC2-4F61-B798-6D535A766610}"
+          SQLTask:SqlStatementSource="truncate table stgEcommerceSeller;&#xA;truncate table stgEcommerceProduct;&#xA;truncate table stgEcommerceSales;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3AAC31A9-BFA1-4B79-81A0-646460B602EE}"
+      DTS:From="Package\SQL - Truncate Stage Sale"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Stage Products" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D7A3A32-8594-46F2-9FA1-0C8448536A8D}"
+      DTS:From="Package\SQL - Truncate Stage Sale"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Stage Sellers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1D7DD369-C0DB-439B-80DD-58F03CA77038}"
+      DTS:From="Package\SQL - Truncate Stage Sale"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DF - Stage Sales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\SQL - Truncate Stage Sale"
+          TopLeft="305.000000649265,53.5294117177853" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF - Stage Sellers"
+          TopLeft="74.2857144438491,189.647058657296" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\DF - Stage Products"
+          TopLeft="319.28571496539,191.176470420662" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DF - Stage Sales"
+          TopLeft="565.000001202737,190.411764538979" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="405.742857807327,95.1294117177853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96.0470587028764"
+              Start="0,0"
+              End="0,88.5470587028764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5470587028764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="357.600000649265,95.1294117177853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202.114286205416,94.5176469395111"
+              Start="0,0"
+              End="-202.114286205416,87.0176469395111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3252810729407" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.3252810729407"
+                    Point2="0,32.3252810729407"
+                    Point3="-4,32.3252810729407" />
+                  <mssgle:LineSegment
+                    End="-198.114286205416,32.3252810729407" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198.114286205416,32.3252810729407"
+                    Point2="-202.114286205416,32.3252810729407"
+                    Point3="-202.114286205416,36.3252810729407" />
+                  <mssgle:LineSegment
+                    End="-202.114286205416,87.0176469395111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="454.800000649265,95.1294117177853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.200000553472,95.2823528211938"
+              Start="0,0"
+              End="188.200000553472,87.7823528211938">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5868124733081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5868124733081"
+                    Point2="0,32.5868124733081"
+                    Point3="4,32.5868124733081" />
+                  <mssgle:LineSegment
+                    End="184.200000553472,32.5868124733081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.200000553472,32.5868124733081"
+                    Point2="188.200000553472,32.5868124733081"
+                    Point3="188.200000553472,36.5868124733081" />
+                  <mssgle:LineSegment
+                    End="188.200000553472,87.7823528211938" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Stage Sellers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\DF - Stage Sellers\SRC - Ecommerce Seller"
+          TopLeft="265.000000564116,40.5294117291803" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller"
+          TopLeft="245.000000521541,162.117646916721" />
+        <EdgeLayout
+          Id="Package\DF - Stage Sellers.Paths[OLE DB Source Output]"
+          TopLeft="361.200000542828,82.1294117291803">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.9882351875409"
+              Start="0,0"
+              End="0,72.4882351875409">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.4882351875409" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF - Stage Products">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\DF - Stage Products\SRC - Ecommerce Product"
+          TopLeft="482.999992802739,67.999998986721" />
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\DF - Stage Products\DST - Stage stgEcommerceProduct"
+          TopLeft="467.999993026257,225.999996632338" />
+        <EdgeLayout
+          Id="Package\DF - Stage Products.Paths[OLE DB Source Output]"
+          TopLeft="586.699992914498,109.599998986721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,116.399997645617"
+              Start="0,0"
+              End="0,108.899997645617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108.899997645617" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF - Stage Sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\DF - Stage Sales\SRC - Ecommerce OrderItems"
+          TopLeft="495.999992609024,51.9999992251396" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\DF - Stage Sales\DST - Stage stgEcommerceSales"
+          TopLeft="489.999992698431,194.999997094274" />
+        <EdgeLayout
+          Id="Package\DF - Stage Sales.Paths[OLE DB Source Output]"
+          TopLeft="605.599992653728,93.5999992251396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101.399997869134"
+              Start="0,0"
+              End="0,93.8999978691339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.8999978691339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sellers\SRC - Ecommerce Seller">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sellers\DST - Stage stgEcommerceSeller">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Products\SRC - Ecommerce Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Products\DST - Stage stgEcommerceProduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sales\SRC - Ecommerce OrderItems">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sales\DST - Stage stgEcommerceSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

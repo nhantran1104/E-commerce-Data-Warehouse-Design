@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>EcommerceOLAP</Database>
+    <Server>localhost\MSSQLSERVER02</Server>
+    <ConnectionString>Data Source=localhost\MSSQLSERVER02;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>kIqnjyB8mFoSdDa67BSkjrLFHhM=5/19/2025 3:31:16 PM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Ecommerce</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>s4hbVG7QQry3/V2H0vYlnL2t/GA=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Ecommerce</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>n7zdOzalhKFDDR1IaIxBjdsJCR4=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>48eK1bMR75NQJMbKK/a8ToHC1+o=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>tYGtPad2berlZk2hnaTwOi+M8uQ=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Dim Seller</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UTq0u8q5Bs+vbA2CMhI+qpPAIM4=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>y4Kk0PfIJ2Lsskk6ArkJDQoqn2g=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PMWzJ5Vpig5fZvjgOLhgb15cyH6zU=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+        <ID>
+          <String>Ecommerce</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>yjTSuOp/XgsMmtxNXV8JH/zHkxM=5/18/2025 11:42:35 AM5/19/2025 3:30:03 PM</TimeStamp>
+      <ID>
+        <String>EcommerceOLAP</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-05-19T08:32:27.546667Z</LastDeployed>
+</DeploymentSnapshot>
